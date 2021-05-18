@@ -1,0 +1,20 @@
+h1 {
+  padding: 0.3em;
+  margin: 0.3em;
+}
+#products {
+  padding-top: 5em;
+}
+
+.btn {
+  margin: 2em;
+}
+#products div {
+  border-bottom: solid red;
+  padding: 1em;
+  margin: 1em;
+}
+.nom {
+  display: flex;
+  flex-direction: row;
+}

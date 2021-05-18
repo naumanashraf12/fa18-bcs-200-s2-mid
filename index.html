@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CRUD</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Optional CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="container">
+    <div id="heading">
+      <h1 class="col-12 float-left">Sessional 2</h1>
+    </div>
+    <div class="row" id="get-one">
+      <button class="btn btn-success get-one btn-md">To display one product</button>
+    </div>
+    <div class="row" id="get">
+      <button class="btn btn-success get-all btn-md">To display all</button>
+    </div>
+
+    <div id="products"></div>
+    <button
+      type="button"
+      class="btn btn-success btn-md"
+      data-toggle="modal"
+      data-target="#addProductModal"
+    >
+      To Add New Product
+    </button>
+
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Product</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input
+                type="hidden"
+                class="form-control"
+                name="ID"
+                id="editID"
+                aria-describedby="helpId"
+                placeholder="ID of the product"
+              />
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Name"
+                id="editName"
+                aria-describedby="helpId"
+                placeholder="Name of the product"
+              />
+
+              <label for="name">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                name="Price"
+                id="editPrice"
+                aria-describedby="helpId"
+                placeholder="Price of the product"
+              />
+
+              <label for="name">Color</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Color"
+                id="editColor"
+                aria-describedby="helpId"
+                placeholder="Color of the product"
+              />
+
+              <label for="name">Department</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Department"
+                id="editDepartment"
+                aria-describedby="helpId"
+                placeholder="Department of the product"
+              />
+
+              <label for="name">Description</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Description"
+                id="editDiscription"
+                aria-describedby="helpId"
+                placeholder="Description of the product"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="editSave" class="btn btn-primary">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addProductModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add A New Product</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- 1 -->
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Name"
+                id="addName"
+                aria-describedby="helpId"
+                placeholder="Name of the product"
+              />
+
+              <label for="name">Price</label>
+              <input
+                type="number"
+                class="form-control"
+                name="Price"
+                id="addPrice"
+                aria-describedby="helpId"
+                placeholder="Price of the product"
+              />
+
+              <label for="name">Color</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Color"
+                id="addColor"
+                aria-describedby="helpId"
+                placeholder="Color of the product"
+              />
+
+              <label for="name">Department</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Department"
+                id="addDepartment"
+                aria-describedby="helpId"
+                placeholder="Department of the product"
+              />
+
+              <label for="name">Description</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Description"
+                id="addDiscription"
+                aria-describedby="helpId"
+                placeholder="Description of the product"
+              />
+            </div>
+            <!-- 1 -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="addSave" class="btn btn-primary">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button class="btn btn-success">Add New Product</button> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
